@@ -2,6 +2,7 @@ import NextAuth from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
 import { User } from "@/models/userModel";
 import bcrypt from "bcryptjs";
+import { dbConnect } from "@/utils/mongo";
 
 const handler = NextAuth({
     session: {
@@ -21,6 +22,7 @@ const handler = NextAuth({
                 if (credentials === null) return null;
 
                 try {
+                    const conn = await dbConnect();
                     const user = await User.findOne({
                         email: credentials?.email,
                     });

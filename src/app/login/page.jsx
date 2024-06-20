@@ -1,20 +1,20 @@
 import React from "react";
-import RegistrationForm from "@/components/RegistrationForm";
 
 import Link from "next/link";
+import LoginForm from "@/components/LoginForm";
 
-const RegisterPage = () => {
+const LoginPage = () => {
     return (
         <div className="flex flex-col items-center justify-center pt-24">
-            <RegistrationForm />
+            <LoginForm />
             <div className="my-3">
-                Already have an account?
+                Don't have an account?
                 <Link href="/login" className="mx-2 underline">
-                    Login
+                    Register
                 </Link>
             </div>
         </div>
     );
 };
 
-export default RegisterPage;
+export default LoginPage;

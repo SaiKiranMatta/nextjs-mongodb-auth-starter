@@ -13,7 +13,7 @@ export const metadata = {
 };
 
 export default async function RootLayout({ children }) {
-    const connect = await dbConnect();
+    // const connect = await dbConnect();
     return (
         <html lang="en" suppressHydrationWarning>
             <body className={inter.className}>
