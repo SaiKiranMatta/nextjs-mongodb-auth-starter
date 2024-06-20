@@ -1,13 +1,13 @@
 "use client";
 
+import RegistrationForm from "@/components/RegistrationForm";
 import React, { useEffect, useState } from "react";
 import Link from "next/link";
-import LoginForm from "@/components/LoginForm";
 import { useSession } from "next-auth/react";
 import { redirect } from "next/navigation";
 import { useRouter } from "next/navigation";
 
-const LoginPage = () => {
+const RegisterPage = () => {
     const { data: session, status } = useSession();
     const [loading, setLoading] = useState(true);
 
@@ -27,11 +27,11 @@ const LoginPage = () => {
         <>
             {!loading && (
                 <div className="flex flex-col items-center justify-center pt-24">
-                    <LoginForm />
+                    <RegistrationForm />
                     <div className="my-3">
-                        Don't have an account?
+                        Already have an account?
                         <Link href="/login" className="mx-2 underline">
-                            Register
+                            Login
                         </Link>
                     </div>
                 </div>
@@ -40,4 +40,4 @@ const LoginPage = () => {
     );
 };
 
-export default LoginPage;
+export default RegisterPage;
