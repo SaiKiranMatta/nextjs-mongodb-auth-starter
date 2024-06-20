@@ -30,7 +30,7 @@ const LoginPage = () => {
                     <LoginForm />
                     <div className="my-3">
                         Don't have an account?
-                        <Link href="/login" className="mx-2 underline">
+                        <Link href="/register" className="mx-2 underline">
                             Register
                         </Link>
                     </div>
